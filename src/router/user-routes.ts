@@ -18,9 +18,4 @@ const routes: Array<RouteRecordRaw> = [
   // replace with error
 ];
 
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-});
-
-export default router;
+export default routes;
