@@ -4,7 +4,9 @@ import { computed, ref } from 'vue';
 
 export default function query() {
   const users = ref();
-  const { result, error } = useQuery(gql`
+
+  function getUsers() {
+    const { result, error } = useQuery(gql`
       query getUsers {
         search(query: "", type: USER, first: 10) {
           edges {
@@ -28,8 +30,6 @@ export default function query() {
         }
       }
     `);
-
-  function getUsers() {
     console.log('error', error);
     users.value = computed(() => result.value.search.edges ?? []);
     console.log('users:', users.value.value);

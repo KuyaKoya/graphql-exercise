@@ -9,7 +9,7 @@ const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
 });
 
-const token = process.env.VUE_APP_GITHUB_ACCESS_TOKEN;
+const token = process.env.VUE_APP_GITHUB_ACCESS_USER_TOKEN;
 
 const authLink = setContext((_, { headers }) => ({
   headers: {
